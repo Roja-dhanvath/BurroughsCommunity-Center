@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Burroughs :: Programs</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="../js/jquery-latest.min.js"></script>
+        <script src="../js/jquery.windows.js"></script>
+        <link rel="stylesheet" href="../css/main.css">
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="../js/unslider.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link async href="http://fonts.googleapis.com/css?family=Fredoka%20One" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <section id="0" class="window">
+            <div class="content">
+				<div id="logo">
+					<img src="../images/main_logo.png"/>
+				</div>
+				<div id="nav_bar" class="nav">
+					<ul>
+						<li><a href="../pages/index.html">Home</a></li>
+						<li><a href="../pages/aboutus.html">About us</a></li>
+						<li><a class="active-page" href="#">Programs</a></li>
+						<li><a href="../pages/news.html">News</a></li>
+						<li><a href="../pages/reservation.html">Reserve</a></li>
+						<li><a href="signup.html">Sign up</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						<li><a id="donate" href="donation.html">Donate</a></li>
+					</ul>
+				</div>
+				<a href="https://www.facebook.com/burroughscc" id="facebook-nav"></a>
+					<h1 class="title">Programs</h1>
+					<p class="centered-text">
+					With an emphasis on reducing barriers to success, Burroughs programs offer individuals the opportunity to 
+					obtain instruction and connect with services they may not otherwise receive. Our programs recognize the importance 
+					of remaining flexibility to meet the changing needs of our community while staying focused on delivering outcomes most 
+					meaning full to the participants. For more information, please, contact us.
+					</p>
+					<div id="contact-button-wrapper" class="col-md-offset-5">
+						<a id="contact-button" href="../pages/contact.html" class="btn btn-default btn-lg shadow ">Contact us!</a>
+					</div>
+			</div>
+		</section>
+		<section id="1" class="window">
+			<div  class="content">
+				<div class="program">
+					<img class="pull-left shadow" src="../images/communitypeople.jpg" />
+					<p class=""> The <span class="program-title">Quick Start Language</span> program is a self-driven computer assisted language instruction.  Computers are made available to
+
+									participants along with the software instruction in English and 10 other languages.  Someone is available 
+
+									on site for support.  Contact us if you are interested in learning a new language. </p>
+				</div>
+				<hr class="hr-reservation">
+				<div class="program">
+					<img class="pull-right shadow" src="../images/communitypeople.jpg" />
+					<p class=""> The <span class="program-title">Volunteer Income Tax Assistance</span> program offers free tax help to people who generally make $54,000 or less, persons with
+
+									disabilities, the elderly and limited English speaking taxpayers who need assistance in preparing their 
+
+									own tax returns. IRS-certified volunteers provide free basic income tax return preparation with 
+
+									electronic filing to qualified individuals.</p>
+				</div>
+			</div>
+		</section>
+		<section id="2" class="window">
+			<div  class="content">
+				<div class="program">
+					<img class="pull-left shadow" src="../images/communitypeople.jpg" />
+					<p class=""> Burroughs partners with the Literacy Volunteers of Greater Bridgeport to actively promote literacy by 
+
+									identifying adult literacy needs in our community and meeting those needs through direct literacy 
+
+									services. We strive to help our clients acquire the literacy skills necessary to be successful in the 
+
+									workplace, participate in the education of their children and lead productive lives. </p>
+				</div>
+				<hr class="hr-reservation">
+				<div class="program">
+					<img class="pull-right shadow" src="../images/communitypeople.jpg" />
+					<p class=""> Our <span class="program-title">Computer Center</span> is equipped with computers with access to the standard Microsoft Office Suite of 
+
+									programs and access to the internet. Burroughs also	offers personalized computer support that allows 
+									
+									the participant to define their own learning objectives. This allows students to focus on the competencies 
+									
+									they need to develop at a pace they feel comfortable.  Contact us if access to a computer or basic 
+									
+									knowledge of how to use a computer is an obstacle for you. </p>
+				</div>
+			</div>
+		</section>
+		<section id="3" class="window">
+			<div  class="content">
+				<div class="program">
+					<img class="pull-left shadow" src="../images/communitypeople.jpg" />
+					<p class=""> The <span class="program-title">Our Woven Community (OWC)</span> program provides refugee women the opportunity to become self-sufficient leaders, integrate into the 
+									
+									community and become empowered with entrepreneurial skills and economic opportunity.  Learning to use sewing 
+									
+									machines, they items that are sold at local craft fairs and holiday events. Half of the proceeds from each item 
+									
+									sold goes to the woman who created it, the rest helps to keep the program running. </p>
+				</div>
+				<hr class="hr-reservation">
+				<div class="program">
+					<img class="pull-right shadow" src="../images/communitypeople.jpg" />
+					<p class=""> The Burroughs offers classes and workshops focused on the arts, health, stress
+
+									reduction, and recreation. Examples are: womenâ€™s health roundtable, cooking and nutrition, yoga classes, 
+									
+									self-defense, watercolor painting and drawing, and quilting and needlecraft. If you are interested in 
+									
+									receiving program information and/or volunteering to share your expertise with others in the community contact us.
+ 					</p>
+				</div>
+			</div>
+		</section>
+		<script>
+			var $windows;
+			$(document).ready(function() {
+    			// run test on initial page load
+    			$windows = $('.window');
+    			$windows.windows({
+	            	snapping: true,
+	                snapSpeed: 500,
+	                snapInterval: 1100,
+	                onScroll: function(s){},
+	                onSnapComplete: function($el){},
+	                onWindowEnter: function($el){}
+                });
+    			checkSize();
+    			// run test on resize of the window
+    			$(window).resize(checkSize);
+    			$(window).scroll(checkSize);
+			});
+
+			//Function to the css rule
+			function checkSize(){
+    			if ($(".nav ul").css("width") == "1000px"){
+    				$("section").addClass("window");
+    				$("#reserve-gallery").addClass("float-right");
+    				$("#reserve-text").addClass("float-left");
+    				$("#contact-button-wrapper").addClass("col-md-offset-5");
+    				options.snapping = true;
+					if ($(window).scrollTop() > 176) {
+						$("#nav_bar").css("position","fixed");
+					}
+					if ($(window).scrollTop() < 177) {
+						$("#nav_bar").css("position","static");
+					}
+    			}else{
+    				options.snapping = false;
+    				$("#nav_bar").css("position","static");
+    				$("section").removeClass("window");
+    				$("#reserve-gallery").removeClass("float-right");
+    				$("#reserve-text").removeClass("float-left");
+    				$("#contact-button-wrapper").removeClass("col-md-offset-5");
+    			}
+			}
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+
+<!doctype html>
+<html>
+    <head>
+        <title>Burroughs :: Donation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="../js/jquery-latest.min.js"></script>
+        <script src="../js/jquery.windows.js"></script>
+        <link rel="stylesheet" href="../css/main.css">
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link async href="http://fonts.googleapis.com/css?family=Fredoka%20One" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <section id="0" class="window">
+            <div class="content">
+				<div id="logo">
+					<img src="../images/main_logo.png"/>
+				</div>
+				<div id="nav_bar" class="nav">
+					<ul>
+						<li><a href="../pages/index.html">Home</a></li>
+						<li><a href="../pages/aboutus.html">About us</a></li>
+						<li><a href="../pages/programs.html">Programs</a></li>
+						<li><a href="../pages/news.html">News</a></li>
+						<li><a href="../pages/reservation.html">Reserve</a></li>
+						<li><a href="../pages/signup.html">Sign up</a></li>
+						<li><a href="../pages/contact.html">Contact</a></li>
+						<li><a id="donate" href="#">Donate</a></li>
+					</ul>
+				</div>
+				<a href="https://www.facebook.com/burroughscc" id="facebook-nav"></a>
+				<h1 class="title">Why donate to us</h1>
+				<p class="centered-text">
+					Receiving your contribution is the primary way Burroughs can continue to offer the resources and 
+
+					services necessary to keep the community engaged, informed and connected to needed services.  
+
+					By making your tax deductible donation, you are taking an active role with helping to build a stronger community.
+				</p>
+            </div>
+        </section>
+
+        <section id="1" class="window">
+            <div class="content">
+               <h1 class="title">Help us to build a stronger community !</h1>
+               <div id="donation-info" class="">
+	               <div id="check-address-wrapper">
+		               <p class="centered-text">
+		               		Checks can be make payable to <b>BURROUGHS COMMUNITY CENTER</b> and mailed to:
+		               </p>
+		               <div id="check-address" class="shadow bg-warning">
+							<p class="centered-text">Burroughs Community Center</p> 
+							<p class="centered-text">2470 Fairfield Avenue</p>
+							<p class="centered-text">Bridgeport, CT 06605</p>
+		               </div>
+	               </div>
+	               <div id="paypal-wrapper">
+	               	<p class="centered-text">
+	               		You also can donate through Paypal! Just hit the button below.
+	               </p>
+		               <form class="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+							<input type="hidden" name="cmd" value="_donations">
+							<input type="hidden" name="business" value="paul@burroughscc.org">
+							<input type="hidden" name="lc" value="US">
+							<input type="hidden" name="item_name" value="Burroughs Community Center">
+							<input type="hidden" name="no_note" value="0">
+							<input type="hidden" name="cn" value="Add special instructions to the seller:">
+							<input type="hidden" name="no_shipping" value="2">
+							<input type="hidden" name="currency_code" value="USD">
+							<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHosted">
+							<button id="to-paypal" type="submit" class="btn btn-default shadow"><p class="centered-text">Donate</p></button>
+						</form>
+	               </div>
+               </div>
+               <div id="donation-illustration">
+               		<img class="shadow" src="../images/children.jpg" />
+               		<p class="centered-text">Your gift will go a long way with closing opportunity gaps and will be leveraged to
+
+					advances the work and social mission of dozens of organizations focused on driving better outcomes 
+
+					individuals and families in our neighborhood.</p>
+               </div>	
+            </div>
+        </section>
+        <script>
+			var $windows;
+			$(document).ready(function() {
+    			// run test on initial page load
+    			$windows = $('.window');
+    			$windows.windows({
+	            	snapping: true,
+	                snapSpeed: 500,
+	                snapInterval: 1100,
+	                onScroll: function(s){},
+	                onSnapComplete: function($el){},
+	                onWindowEnter: function($el){}
+                });
+    			checkSize();
+    			// run test on resize of the window
+    			$(window).resize(checkSize);
+    			$(window).scroll(checkSize);
+			});
+
+			//Function to the css rule
+			function checkSize(){
+    			if ($(".nav ul").css("width") == "1000px"){
+    				$("section").addClass("window");
+    				$("#reserve-gallery").addClass("float-right");
+    				$("#reserve-text").addClass("float-left");
+    				options.snapping = true;
+					if ($(window).scrollTop() > 176) {
+						$("#nav_bar").css("position","fixed");
+					}
+					if ($(window).scrollTop() < 177) {
+						$("#nav_bar").css("position","static");
+					}
+    			}else{
+    				options.snapping = false;
+    				$("#nav_bar").css("position","static");
+    				$("section").removeClass("window");
+    				$("#reserve-gallery").removeClass("float-right");
+    				$("#reserve-text").removeClass("float-left");
+    			}
+			}
+        </script>
+    </body>
+</html>

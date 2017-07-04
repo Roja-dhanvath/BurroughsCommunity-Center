@@ -1,0 +1,125 @@
+
+<!doctype html>
+<html>
+    <head>
+        <title>Burroughs :: Contact</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="../js/jquery-latest.min.js"></script>
+        <script src="../js/jquery.windows.js"></script>
+        <link rel="stylesheet" href="../css/main.css">
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link async href="http://fonts.googleapis.com/css?family=Fredoka%20One" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css"/>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+    </head>
+    <body>
+        <section id="0" class="window">
+            <div class="content">
+				<div id="logo">
+					<img src="../images/main_logo.png"/>
+				</div>
+				<div id="nav_bar" class="nav">
+					<ul>
+						<li><a href="../pages/index.html">Home</a></li>
+						<li><a href="../pages/aboutus.html">About us</a></li>
+						<li><a href="../pages/programs.html">Programs</a></li>
+						<li><a href="../pages/news.html">News</a></li>
+						<li><a href="../pages/reservation.html">Reserve</a></li>
+						<li><a href="../pages/signup.html">Sign up</a></li>
+						<li><a class="active-page" href="#">Contact</a></li>
+						<li><a id="donate" href="../pages/donation.html">Donate</a></li>
+					</ul>
+				</div>
+				<a href="https://www.facebook.com/burroughscc" id="facebook-nav"></a>
+				<div id="contact-start">
+					<h1 class="title">Contact</h1>
+					<div id="address-social-wrapper">
+			            <div id="check-address" class="bg-warning shadow">
+							<p>Address: 2470 Fairfield Avenue, Bridgeport CT 06605</p>
+							<p>Phone: <a href="tel:2033340293">203-334-0293</a></p>
+							<p>E-mail: <a href="mailto:info@burroughscc.org">info@burroughscc.org</a></p>
+							<div id="social-contact">
+								<a target="_blank" href="http://www.facebook.com/burroughscc"><img class="social-img" src="../images/facebook-256.png"/></a>
+								<a target="_blank" href="http://twitter.com/Burroughscenter"><img class="social-img" src="../images/Twitter-icon.png.png"/></a>
+							</div>
+			            </div>
+			            <a href="#1" id="give-directions-btn" class="btn btn-default">
+			            	<span class="glyphicon glyphicon-arrow-down"></span>
+			            </a>
+					</div>
+				</div>
+            </div>
+        </section>
+
+        <section id="1" class="window">
+            <div id="other-contact" class="content">
+            	<h1 class="title">There are other ways to contact us</h1>
+            	<div id="contact-options-wrapper">
+	            	<div id="contact-form" class="bg-warning shadow">
+	            		<h2 class="title">Fill the contact form</h2>
+		    			<form>
+							  <div class="form-group">
+							    <label for="iName">Name</label>
+							    <input required type="text" class="form-control" id="iName" placeholder="Name">
+							  </div>
+							  <div class="form-group">
+							    <label for="iEmail">E-Mail</label>
+							    <input required type="email" class="form-control" id="iEmail" placeholder="E-mail">
+							  </div>
+							  <div class="form-group">
+							    <label for="iMessage">Message</label>
+							    <textarea required class="form-control" id="iMessage" placeholder="Message"></textarea>
+							  </div>
+							  <button type="submit" class="btn btn-default">Submit</button>
+						</form>
+	            	</div>
+            		<div id="map" class="bg-warning shadow">
+            			<h2 class="title">Check out our location</h2>
+            			<iframe class="shadow" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12015.68219182442!2d-73.228398!3d41.158085!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e80e2e98c9d73f%3A0xf918732bf89a48c8!2s2470+Fairfield+Ave%2C+Bridgeport%2C+CT+06605!5e0!3m2!1spt-BR!2sus!4v1446760317792" frameborder=0 border:0 allowfullscreen></iframe>
+            		</div>
+            	</div>	
+            </div>
+        </section>
+        <script>
+			var $windows;
+			$(document).ready(function() {
+    			// run test on initial page load
+    			$windows = $('.window');
+    			$windows.windows({
+	            	snapping: true,
+	                snapSpeed: 500,
+	                snapInterval: 1100,
+	                onScroll: function(s){},
+	                onSnapComplete: function($el){},
+	                onWindowEnter: function($el){}
+                });
+    			checkSize();
+    			// run test on resize of the window
+    			$(window).resize(checkSize);
+    			$(window).scroll(checkSize);
+			});
+
+			//Function to the css rule
+			function checkSize(){
+    			if ($(".nav ul").css("width") == "1000px"){
+    				$("section").addClass("window");
+    				$("#reserve-gallery").addClass("float-right");
+    				$("#reserve-text").addClass("float-left");
+    				options.snapping = true;
+					if ($(window).scrollTop() > 176) {
+						$("#nav_bar").css("position","fixed");
+					}
+					if ($(window).scrollTop() < 177) {
+						$("#nav_bar").css("position","static");
+					}
+    			}else{
+    				options.snapping = false;
+    				$("#nav_bar").css("position","static");
+    				$("section").removeClass("window");
+    				$("#reserve-gallery").removeClass("float-right");
+    				$("#reserve-text").removeClass("float-left");
+    			}
+			}
+        </script>
+    </body>
+</html>
